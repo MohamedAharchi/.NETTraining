@@ -20,16 +20,11 @@ namespace CSharpDiscovery
 
         public string Name { get; set; }
 
-        public double Sum(double[] valuesToSum)
+        public virtual double Sum(double[] valuesToSum)
         {
             return valuesToSum.Sum();
         }
-
-        public double Sum(string valeur)
-        {
-            string[] valuesToSum = valeur.Split('+');
-            return valuesToSum.Sum(value => double.Parse(value));
-        }
+        
     }
 
     [TestFixture]
@@ -63,10 +58,10 @@ namespace CSharpDiscovery
         [Test]
         public void AddAMethodOverloadThatMakeASumOfTwoDoubleFromStringRepresentation()
         {
-            Calculator calculator = new Calculator();
+            var stringCalculator = new StringCalculator();
             var sumOfTwoDoubleFromString = "1,0+2";
             // add a method with the same name that uses the previous method
-            double onePlusTwo = calculator.Sum(sumOfTwoDoubleFromString);
+            double onePlusTwo = stringCalculator.Sum(sumOfTwoDoubleFromString);
             // tips : use string.Split
             Check.That(onePlusTwo).Equals(3.0);
         }
