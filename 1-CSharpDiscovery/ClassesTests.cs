@@ -93,15 +93,15 @@ namespace CSharpDiscovery
             Check.That(calculator.Name).Equals("Calculator");
         }
 
-        [Test]
-        public void DefineConstantForPi()
-        {
-            var sumOfADoubleAndPiConstant = "1,2 + pi";
-            const double pi = 3.14;
-            double sum = 4.34;
-            // define pi constant (as double) and replace pi string with constant value
-            Check.That(sum).Equals(4.34);
-        }
+        //[Test]
+        //public void DefineConstantForPi()
+        //{
+        //    var sumOfADoubleAndPiConstant = "1,2 + pi";
+        //    const double pi = 3.14;
+        //    double sum = 4.34;
+        //    // define pi constant (as double) and replace pi string with constant value
+        //    Check.That(sum).Equals(4.34);
+        //}
 
         //[Test]
         //public void StaticReadonlyMembers()
